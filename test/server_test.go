@@ -37,6 +37,9 @@ func TestHTTP_Start_2(t *testing.T) {
 	h.GET("/user", func(w http.ResponseWriter, r *http.Request) {
 		_, _ = w.Write([]byte("hello user"))
 	})
+	h.POST("/user", func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte("POST:hello user"))
+	})
 	// 启动服务器
 	err := h.Start(":8080")
 	if err != nil {

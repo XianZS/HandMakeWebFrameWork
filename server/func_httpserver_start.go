@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"net/http"
 )
 
@@ -18,4 +19,21 @@ func (h *HTTPServer) Start(addr string) error {
 		Handler: h,
 	}
 	return h.srv.ListenAndServe()
+}
+
+func prRouters(h *HTTPServer) {
+	/*
+		## Means:
+			打印路由信息.
+			Print the routers.
+		## How to print the routers?
+			遍历routers map，打印路由信息.
+			Iterate the routers map, print the routers.
+	*/
+	fmt.Println("===***=== Routers ===***===")
+	for key, value := range h.routers {
+		fmt.Printf("[%v] -> ", key)
+		fmt.Println(value)
+	}
+	fmt.Println("===***=== ===***=== ===***===")
 }

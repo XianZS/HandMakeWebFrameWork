@@ -1,6 +1,25 @@
+/*
+Package server
+向前对接前端请求，向后对接框架
+|-----前端-------|       |---------后端--------|
+|               |       |     框架<-------|   |
+|               |       |                |   |
+|               |---|   |————————————|   |   |
+|               |   |   |            |   |   |
+|               |   |-->| HTTPServer |---|   |
+|               |       |            |       |
+|               |       |            |       |
+|               |       |------------|       |
+|               |       |                    |
+|---------------|       |--------------------|
+*/
+
 package server
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func (h *HTTPServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	/*
@@ -14,6 +33,14 @@ func (h *HTTPServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			转发一个请求.
 			* Forward the request to the router.
 	*/
-	// TODO: Implement me!
-	panic("implement me")
+	// 1. 匹配路由
+	key := fmt.Sprintf("%s-%s", r.Method, r.URL.Path)
+	handler, ok := h.routers[key] // 返回视图函数
+	if !ok {
+		w.WriteHeader(http.StatusNotFound)
+		_, _ = w.Write([]byte("404 NOT FOUND"))
+		return
+	}
+	// 2. 转发请求
+	handler(w, r)
 }

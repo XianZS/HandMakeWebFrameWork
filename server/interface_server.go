@@ -17,8 +17,13 @@ type server interface {
 			* We need compatible with the http server
 	*/
 	http.Handler
-	// Start : This is start server.
+	// Start : 开启服务
 	Start(addr string) error
-	// Stop : This is stop server
+	// Stop : 关闭服务
 	Stop() error
+	// addRouter : 注册路由 addRouter(请求方法，请求路径，视图函数)
+	/*
+		视图函数是用来处理请求的函数，它的参数是http.ResponseWriter和*http.Request
+	*/
+	addRouter(method string, pattern string, handleFunc HandleFunc)
 }

@@ -1,6 +1,8 @@
 package server
 
-import "net/http"
+import (
+	"net/http"
+)
 
 func (h *HTTPServer) Start(addr string) error {
 	/*
@@ -11,7 +13,6 @@ func (h *HTTPServer) Start(addr string) error {
 			默认监听8080端口.
 			Listen the address that default port is 8080.s
 	*/
-	// TODO: Implement me!
 	h.srv = &http.Server{
 		Addr:    addr,
 		Handler: h,

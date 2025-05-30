@@ -31,6 +31,7 @@ func TestHTTP_Start_1(t *testing.T) {
 func TestHTTP_Start_2(t *testing.T) {
 	h := server.NewHTTPServer()
 	// 注册路由 : 在启动之前
+	// 接口测试
 	h.GET("/world", func(w http.ResponseWriter, r *http.Request) {
 		_, _ = w.Write([]byte("hello world"))
 	})

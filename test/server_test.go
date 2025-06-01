@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/XianZS/HandMakeWebFrameWork/context"
 	"github.com/XianZS/HandMakeWebFrameWork/server"
-	"net/http"
 	"testing"
 )
 
@@ -32,14 +32,14 @@ func TestHTTP_Start_2(t *testing.T) {
 	h := server.NewHTTPServer()
 	// 注册路由 : 在启动之前
 	// 接口测试
-	h.GET("/world", func(w http.ResponseWriter, r *http.Request) {
-		_, _ = w.Write([]byte("hello world"))
+	h.GET("/world", func(ctx *context.Context) {
+		_, _ = ctx.GetResponse().Write([]byte("hello world"))
 	})
-	h.GET("/user", func(w http.ResponseWriter, r *http.Request) {
-		_, _ = w.Write([]byte("hello user"))
+	h.GET("/user", func(ctx *context.Context) {
+		_, _ = ctx.GetResponse().Write([]byte("hello user"))
 	})
-	h.POST("/user", func(w http.ResponseWriter, r *http.Request) {
-		_, _ = w.Write([]byte("POST:hello user"))
+	h.POST("/user", func(ctx *context.Context) {
+		_, _ = ctx.GetResponse().Write([]byte("POST:hello user"))
 	})
 	// 启动服务器
 	err := h.Start(":8080")

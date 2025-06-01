@@ -18,6 +18,7 @@ package server
 
 import (
 	"fmt"
+	"github.com/XianZS/HandMakeWebFrameWork/context"
 	"net/http"
 )
 
@@ -41,6 +42,8 @@ func (h *HTTPServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		_, _ = w.Write([]byte("404 NOT FOUND"))
 		return
 	}
+	// 2. 构造当前请求的上下文
+	c := context.NewContext(w, r)
 	// 2. 转发请求
-	handler(w, r)
+	handler(c)
 }

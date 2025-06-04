@@ -1,6 +1,6 @@
 package trie
 
-func (n *nodeTrie) searchNode(part string) *nodeTrie {
+func (n *node) searchNode(part string) *node {
 	/*
 		个人间接：如果想要找到某个结点，可以先看一下每个结点的属性，
 		比如说结点A，它包含路径、数据、子结点等属性。

@@ -45,5 +45,20 @@ func (r *Router) AddRouter(pattern string, data string) {
 			// parts : ["user","","address"]
 			panic("路由不合法")
 		}
+		// 叶子结点作为当前路径的唯一标识
+		/*
+			root_2 = root_1.applicationNode(part)
+			个人见解：比如说，parts={"url_child_1","url_child_2"}，
+			最开始root_1是根节点'/'，
+			然后在执行applicationNode之后，
+			root_2就会编程url_child_1结点，
+			以此类推，不断向下执行。
+		*/
+		root = root.applicationNode(part)
 	}
+	/*
+		循环结束后，root就是叶子节点
+		将叶子结点的数据嵌入到叶子结点之上
+	*/
+	root.data = data
 }

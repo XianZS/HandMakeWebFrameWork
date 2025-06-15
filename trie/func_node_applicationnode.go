@@ -4,6 +4,7 @@ package trie
 // func (n *node) applicationNode(part string, data string) *node {
 func (n *node) applicationNode(part string) *node {
 	/*
+		[注册结点]
 		个人见解：对于每个结点来说，它需要知道“自己在哪里？”和“自己是什么”
 		对于每条url来说，我们通过叶子结点来给当前路径打上唯一标识。
 		比如说，对于/user/a1和/user/a2来说，它们有相同父结点，
@@ -17,6 +18,17 @@ func (n *node) applicationNode(part string) *node {
 		data string : 当前结点的数据
 		返回*NodeTree，用于存储应用程序数据。
 	*/
-	// 判断当前结点有没有
-	return nil
+	// [没有] - 判断当前结点有没有
+	if n.children == nil {
+		n.children = make(map[string]*node)
+	}
+	// [有] - 判断当前结点有没有
+	child, ok := n.children[part]
+	if !ok {
+		child = &node{
+			part: part,
+		}
+		n.children[part] = child
+	}
+	return child
 }

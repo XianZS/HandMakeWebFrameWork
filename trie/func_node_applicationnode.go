@@ -16,7 +16,7 @@ func (n *node) applicationNode(part string) *node {
 		注册结点，那么就需要传入：
 		part string : 当前结点的路径
 		data string : 当前结点的数据
-		返回*NodeTree，用于存储应用程序数据。
+		返回*NodeTree，用于存储应用程序据。
 	*/
 	// [没有] - 判断当前结点有没有
 	if n.children == nil {

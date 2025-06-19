@@ -23,12 +23,12 @@ func (r *Router) AddRouter(pattern string, data string) {
 	if r.root == nil {
 		// 人话：处理Trie树为空的情况
 		// 处理r.root未初始化的情况
-		r.root = make(map[string]*node)
+		r.root = make(map[string]*Node)
 	}
 	root, ok := r.root["/"]
 	if !ok {
 		// 创建根root结点
-		root = &node{
+		root = &Node{
 			part: "/",
 		}
 		r.root["/"] = root

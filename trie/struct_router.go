@@ -6,5 +6,5 @@ Router [根节点] 提供给用户。
 */
 
 type Router struct {
-	root map[string]*node
+	root map[string]*Node
 }

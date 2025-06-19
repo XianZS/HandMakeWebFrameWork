@@ -2,6 +2,7 @@ package trie
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -9,8 +10,9 @@ import (
 GetRouter [获取路由]
 公开性质:public
 */
-func (r *Router) GetRouter(pattern string) (*node, error) {
-	// 获取根路由
+func (r *Router) GetRouter(pattern string) (*Node, error) {
+	// 找到pattern对应的node，也就是对应的根节点
+	// 先寻找根路由
 	root, ok := r.root["/"]
 	// 创建跟路由
 	if !ok {
@@ -19,11 +21,16 @@ func (r *Router) GetRouter(pattern string) (*node, error) {
 	}
 	parts := strings.Split(strings.Trim(pattern, "/"), "/")
 	for _, part := range parts {
-		// 获取根路由
+		// 判断root不能为nil，并且part值合法
 		if part == "" {
-			return nil, errors.New("pattern 格式不正确")
+			return nil, errors.New("pattern格式不正确")
 		}
-		root = root.getnode(part)
+		root = root.getNode(part)
+		if root == nil {
+			fmt.Println("-=-=-=some-=--=-=")
+			return nil, errors.New("pattern不存在")
+		}
 	}
-	return
+	fmt.Println("-=-=-=some-=--=-=")
+	return root, nil
 }

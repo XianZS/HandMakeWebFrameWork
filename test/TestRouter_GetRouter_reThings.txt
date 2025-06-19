@@ -1,0 +1,94 @@
+GOROOT=D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64 #gosetup
+GOPATH=D:\program\GoLand\GOPATH #gosetup
+GOPROXY=https://goproxy.cn,direct #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe test -c -o C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_xxx.test.exe github.com/XianZS/HandMakeWebFrameWork/trie #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe tool test2json -t C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_xxx.test.exe -test.v=test2json -test.paniconexit0 -test.run ^\QTestRouter_GetRouter\E$/^\Qxxx\E$ #gosetup
+=== RUN   TestRouter_GetRouter
+========== [user login] ==========
+[user login]
+========== [user login] ==========
+========== [user register] ==========
+[user register]
+========== [user register] ==========
+========== [study golang] ==========
+[study golang]
+========== [study golang] ==========
+========== [study python] ==========
+[study python]
+========== [study python] ==========
+=== RUN   TestRouter_GetRouter/xxx
+--- PASS: TestRouter_GetRouter/xxx (0.00s)
+--- PASS: TestRouter_GetRouter (0.00s)
+PASS
+
+进程 已完成，退出代码为 0
+
+
+GOROOT=D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64 #gosetup
+GOPATH=D:\program\GoLand\GOPATH #gosetup
+GOPROXY=https://goproxy.cn,direct #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe test -c -o C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_failed.test.exe -gcflags "all=-N -l" github.com/XianZS/HandMakeWebFrameWork/trie #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe tool test2json -t "D:\program\GoLand\GoLand 2024.2.3\plugins\go-plugin\lib\dlv\windows\dlv.exe" --listen=127.0.0.1:9191 --headless=true --api-version=2 --check-go-version=false --only-same-user=false exec C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_failed.test.exe -- -test.v=test2json -test.paniconexit0 -test.run ^\QTestRouter_GetRouter\E$/^\Qfailed\E$ #gosetup
+API server listening at: 127.0.0.1:9191
+WARNING: undefined behavior - version of Delve is too old for Go version go1.24.0 (maximum supported version 1.23)
+=== RUN   TestRouter_GetRouter
+========== [user login] ==========
+[user login]
+========== [user login] ==========
+========== [user register] ==========
+[user register]
+========== [user register] ==========
+========== [study golang] ==========
+[study golang]
+========== [study golang] ==========
+========== [study python] ==========
+[study python]
+========== [study python] ==========
+=== RUN   TestRouter_GetRouter/failed
+    trie_test.go:86:
+        	Error Trace:	D:/program/GoLand/Code/HandMakeWebFrameWork/trie/trie_test.go:86
+        	Error:      	Not equal:
+        	            	expected: <nil>(<nil>)
+        	            	actual  : *errors.errorString(&errors.errorString{s:"pattern 格式不正确"})
+        	Test:       	TestRouter_GetRouter/failed
+--- FAIL: TestRouter_GetRouter/failed (0.00s)
+
+预期:<nil>(<nil>)
+实际:*errors.errorString(&errors.errorString{s:"pattern 格式不正确"})
+<点击以查看差异>
+
+
+--- FAIL: TestRouter_GetRouter (0.00s)
+
+FAIL
+
+调试器 已完成，退出代码为 0
+
+
+
+GOROOT=D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64 #gosetup
+GOPATH=D:\program\GoLand\GOPATH #gosetup
+GOPROXY=https://goproxy.cn,direct #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe test -c -o C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_success_01.test.exe -gcflags "all=-N -l" github.com/XianZS/HandMakeWebFrameWork/trie #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe tool test2json -t "D:\program\GoLand\GoLand 2024.2.3\plugins\go-plugin\lib\dlv\windows\dlv.exe" --listen=127.0.0.1:10129 --headless=true --api-version=2 --check-go-version=false --only-same-user=false exec C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter_success_01.test.exe -- -test.v=test2json -test.paniconexit0 -test.run ^\QTestRouter_GetRouter\E$/^\Qsuccess#01\E$ #gosetup
+API server listening at: 127.0.0.1:10129
+WARNING: undefined behavior - version of Delve is too old for Go version go1.24.0 (maximum supported version 1.23)
+=== RUN   TestRouter_GetRouter
+========== [user login] ==========
+[user login]
+========== [user login] ==========
+========== [user register] ==========
+[user register]
+========== [user register] ==========
+========== [study golang] ==========
+[study golang]
+========== [study golang] ==========
+========== [study python] ==========
+[study python]
+========== [study python] ==========
+=== RUN   TestRouter_GetRouter/success#01
+--- PASS: TestRouter_GetRouter/success#01 (0.00s)
+--- PASS: TestRouter_GetRouter (0.00s)
+PASS
+
+调试器 已完成，退出代码为 0

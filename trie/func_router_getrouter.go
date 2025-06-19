@@ -2,7 +2,6 @@ package trie
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 )
 
@@ -27,10 +26,10 @@ func (r *Router) GetRouter(pattern string) (*Node, error) {
 		}
 		root = root.getNode(part)
 		if root == nil {
-			fmt.Println("-=-=-=some-=--=-=")
+			// fmt.Println("-=-=-=\('*-*')/-=--=-=")
 			return nil, errors.New("pattern不存在")
 		}
 	}
-	fmt.Println("-=-=-=some-=--=-=")
+	// fmt.Println("-=-=-=\('*-*')/-=--=-=")
 	return root, nil
 }

@@ -92,3 +92,41 @@ WARNING: undefined behavior - version of Delve is too old for Go version go1.24.
 PASS
 
 调试器 已完成，退出代码为 0
+
+GOROOT=D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64 #gosetup
+GOPATH=D:\program\GoLand\GOPATH #gosetup
+GOPROXY=https://goproxy.cn,direct #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe test -c -o C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter.test.exe github.com/XianZS/HandMakeWebFrameWork/trie #gosetup
+D:\program\GoLand\GOPATH\pkg\mod\golang.org\toolchain@v0.0.1-go1.24.0.windows-amd64\bin\go.exe tool test2json -t C:\Users\Administrator\AppData\Local\JetBrains\GoLand2024.2\tmp\GoLand\___github_com_XianZS_HandMakeWebFrameWork_trie__TestRouter_GetRouter.test.exe -test.v=test2json -test.paniconexit0 -test.run ^\QTestRouter_GetRouter\E$ #gosetup
+=== RUN   TestRouter_GetRouter
+========== [user login] ==========
+[user login]
+========== [user login] ==========
+========== [user register] ==========
+[user register]
+========== [user register] ==========
+========== [study golang] ==========
+[study golang]
+========== [study golang] ==========
+========== [study python] ==========
+[study python]
+========== [study python] ==========
+=== RUN   TestRouter_GetRouter/success
+-------------==================------------------
+<nil> <nil>
+-------------==================------------------
+--- PASS: TestRouter_GetRouter/success (0.00s)
+=== RUN   TestRouter_GetRouter/pattern_格式不正确
+-------------==================------------------
+pattern格式不正确 pattern格式不正确
+-------------==================------------------
+--- PASS: TestRouter_GetRouter/pattern_格式不正确 (0.00s)
+=== RUN   TestRouter_GetRouter/node_不存在
+-------------==================------------------
+pattern不存在 pattern不存在
+-------------==================------------------
+--- PASS: TestRouter_GetRouter/node_不存在 (0.00s)
+--- PASS: TestRouter_GetRouter (0.00s)
+PASS
+
+进程 已完成，退出代码为 0
